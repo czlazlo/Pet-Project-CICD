@@ -35,6 +35,7 @@ def add_user():
 #     deleted_user = data_manager.delet_user(user_id)
 #     print(deleted_user)
 
+# this is for testing
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

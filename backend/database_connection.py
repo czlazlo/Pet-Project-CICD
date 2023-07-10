@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 def get_connection_string():
     # setup connection string
     # to do this, please define these environment variables first
-    load_dotenv('/home/lazlo/CC/Pet_project/Flask_with_react/backend/dotenv.env')
+    load_dotenv('/home/lazlo/CC/Pet-Project-CICD/backend/dotenv.env')
 
     user_name = os.getenv('PGUSER')
     password = os.getenv('PGPASSWORD')

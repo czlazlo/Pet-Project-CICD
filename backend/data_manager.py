@@ -1,8 +1,3 @@
-from typing import List, Dict
-from psycopg2 import sql
-from psycopg2.extras import RealDictCursor
-from datetime import datetime
-
 import database_connection
 
 

@@ -27,6 +27,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install ruff pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Copy conftest.py
+        run: |
+          cp path/to/conftest.py ${{ github.workspace }}/tests/conftest.py
       - name: Lint with ruff
         run: |
           # stop the build if there are Python syntax errors or undefined names

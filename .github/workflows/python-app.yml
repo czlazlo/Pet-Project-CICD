@@ -34,7 +34,7 @@ jobs:
           # default set of ruff rules with GitHub Annotations
           ruff --format=github --target-version=py37 .
       - name: Test with pytest
-      	env:
-          PYTHONPATH: ${{github.workspace}} 
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: |
           pytest

@@ -30,4 +30,5 @@ jobs:
           ruff --format=github --target-version=py37 .
       - name: Test with pytest
         run: |
+          cd backend
           python3 -m pytest backend/tests/test_project.py

@@ -27,6 +27,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install ruff pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install -e .
       - name: Copy conftest.py
         run: |
           cp path/to/conftest.py /home/lazlo/CC/Pet-Project-CICD/backend/conftest.py

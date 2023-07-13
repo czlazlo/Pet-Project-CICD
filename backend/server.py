@@ -29,11 +29,16 @@ def add_user():
     return jsonify(response), 200
 
 
-# @app.route("/delete_user/<id>", method=['DELETE'])
-# @cross_origin()
-# def delete_user(user_id):
-#     deleted_user = data_manager.delet_user(user_id)
-#     print(deleted_user)
+@app.route("/delete_user", methods=['POST'])
+@cross_origin()
+def delete_user():
+    data = request.get_json()
+    print(data)
+
+    deleted_user = data_manager.delete_user(data)
+    print(deleted_user)
+    response = {'message': 'Data received successfully'}
+    return jsonify(response), 200
 
 
 if __name__ == "__main__":

@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 
 function DeleteForm({ url }) {
-  const [id, setId] = useState('');
+  const [id, setId] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${url}/${id}`, {
-        method: 'DELETE',
-      });
+      const response = await fetch(url, {
+        method: 'POST',headers:{
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify(id)}
+      );
 
       if (response.ok) {
         console.log('Resource deleted successfully');

@@ -30,4 +30,3 @@ def delete_user(cursor, user_id):
     DELETE FROM user_data WHERE id = %(user_id)s;
     """
     cursor.execute(query, {"user_id": user_id})
-    return cursor.fetchone()

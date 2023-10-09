@@ -42,4 +42,8 @@ def delete_user():
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
+    app.run(host="0.0.0.0", debug=True, port=5000)
+=======
     app.run(debug=True, port=5000)
+>>>>>>> 1b16ed31e2c9ad32ca4d242525f3a4c989533526

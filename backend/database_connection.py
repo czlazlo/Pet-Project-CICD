@@ -7,17 +7,36 @@ from dotenv import load_dotenv
 def get_connection_string():
     # setup connection string
     # to do this, please define these environment variables first
+<<<<<<< HEAD
+    load_dotenv('/backend/dotenv.env')
+    #load_dotenv('/home/lazlo/CC/Pet-Project-CICD/backend/dotenv.env')
+    
+=======
     load_dotenv('/home/lazlo/CC/Pet-Project-CICD/backend/dotenv.env')
 
+>>>>>>> 1b16ed31e2c9ad32ca4d242525f3a4c989533526
     user_name = os.getenv('PGUSER')
     password = os.getenv('PGPASSWORD')
     host = os.getenv('PSQL_HOST')
     database_name = os.getenv('PSQL_DB_NAME')
 
+<<<<<<< HEAD
+    #user_name = "" #push to main
+    #password = "" #push to main
+    #host = "172.17.0.3:5432"
+    #database_name = "user_data"
+    
+    print(user_name,password,host,database_name)
+=======
+>>>>>>> 1b16ed31e2c9ad32ca4d242525f3a4c989533526
     env_variables_defined = user_name and password and host and database_name
 
     if env_variables_defined:
         # this string describes all info for psycopg2 to connect to the database
+<<<<<<< HEAD
+        print(user_name,password,host,database_name)
+=======
+>>>>>>> 1b16ed31e2c9ad32ca4d242525f3a4c989533526
         return 'postgresql://{user_name}:{password}@{host}/{database_name}'.format(
             user_name=user_name,
             password=password,

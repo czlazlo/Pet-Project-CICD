@@ -100,10 +100,8 @@ yarn.lock
 package-lock.json
 
 # Terraform 
-*.tfstate
-*.tfstate.*.backup
-*.tfvars
 .terraform/
+.terraform.lock.hcl
 *.tfstate
 *.tfstate.*.backup
 *.tfvars

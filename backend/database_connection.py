@@ -10,17 +10,20 @@ def get_connection_string():
     #load_dotenv('/backend/dotenv.env')
     #load_dotenv('/home/lazlo/CC/Pet-Project-CICD/backend/dotenv.env')
     
-    load_dotenv('/home/lazlo/CC/GIT/Pet-Project-CICD/backend/dotenv.env')
+    #load_dotenv('/home/lazlo/CC/GIT/Pet-Project-CICD/backend/dotenv.env')
 
-    user_name = os.getenv('PGUSER')
-    password = os.getenv('PGPASSWORD')
-    host = os.getenv('PSQL_HOST')
-    database_name = os.getenv('PSQL_DB_NAME')
+    user_name = os.getenv('DATABASE_USER')
+    password = os.getenv('DATABASE_PASSWORD')
+    #host = os.getenv('DATABASE_HOST')
+    host = 'postgres'
+    database_name = os.getenv('DATABASE_NAME')
 
-    #user_name = "" #push to main
-    #password = "" #push to main
-    #host = "172.17.0.3:5432"
-    #database_name = "user_data"
+    print(user_name)
+    print(password)
+    print(host)
+    print(database_name)
+    
+
     
     print(user_name,password,host,database_name)
     env_variables_defined = user_name and password and host and database_name
@@ -28,7 +31,7 @@ def get_connection_string():
     if env_variables_defined:
         # this string describes all info for psycopg2 to connect to the database
         print(user_name,password,host,database_name)
-        return 'postgresql://{user_name}:{password}@{host}/{database_name}'.format(
+        return 'postgresql://{user_name}:{password}@{host}:5432/{database_name}'.format(
             user_name=user_name,
             password=password,
             host=host,

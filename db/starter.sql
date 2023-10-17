@@ -1,5 +1,7 @@
--- Create a table
-CREATE TABLE IF NOT EXISTS user_data (
+
+DROP TABLE IF EXISTS user_data;
+
+CREATE TABLE user_data (
     id SERIAL PRIMARY KEY,
     email_address VARCHAR(255) NOT NULL,
     first_name VARCHAR(255) NOT NULL,

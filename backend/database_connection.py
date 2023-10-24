@@ -1,7 +1,7 @@
 import os
 import psycopg2
 import psycopg2.extras
-from dotenv import load_dotenv
+
 
 
 def get_connection_string():
@@ -15,7 +15,7 @@ def get_connection_string():
     
 
     
-    print(user_name,password,host,database_name)
+    
     env_variables_defined = user_name and password and host and database_name
 
     if env_variables_defined:

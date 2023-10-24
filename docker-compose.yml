@@ -1,0 +1,50 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    ports:
+      - "5001:5000"
+    environment:
+      - DATABASE_HOST=localhost
+      - DATABASE_PORT=5431
+      - DATABASE_NAME=user_data
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+    networks:
+      - myapp_network
+  frontend:
+    build:
+      context: ./frontend/react-project
+      dockerfile: ./Dockerfile
+    ports:
+      - "3001:3000"
+    networks:
+      - myapp_network
+  postgres:
+    build:
+      context: ./db
+      dockerfile: ./Dockerfile
+    restart: always
+    environment:
+      - PGUSER=postgres
+      - PGPASSWORD=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGHOST=localhost
+      - POSTGRES_DB=user_data
+
+    ports:
+      - "5431:5432"
+    volumes:
+      - postgres:/home/lazlo/CC/GIT/Pet-Project-CICD/docker
+    networks:
+      - myapp_network
+
+volumes:
+  postgres:
+    driver: local
+
+networks:
+  myapp_network:
+    driver: bridge

@@ -49,7 +49,7 @@ package-lock.json
 
 # Docker
 Dockerfile
-docker-compose.yml
+
 # General
 __pycache__
 *.pyc

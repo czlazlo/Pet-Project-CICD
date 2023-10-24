@@ -4,7 +4,6 @@ import data_manager
 app = Flask(__name__)
 cors = CORS(app)
 
-
 @app.route("/")
 def starting_page():
     return "Hello World"
@@ -43,3 +42,5 @@ def delete_user():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True, port=5000)
+
+    

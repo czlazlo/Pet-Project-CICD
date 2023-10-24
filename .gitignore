@@ -47,8 +47,7 @@ coverage/
 yarn.lock
 package-lock.json
 
-# Docker
-Dockerfile
+
 
 # General
 __pycache__

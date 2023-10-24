@@ -4,6 +4,7 @@ import data_manager
 app = Flask(__name__)
 cors = CORS(app)
 
+
 @app.route("/")
 def starting_page():
     return "Hello World"
@@ -12,7 +13,7 @@ def starting_page():
 @app.route("/members")
 @cross_origin()
 def members():
-    users = data_manager.user_list()
+    users = data_manager.user_list() # type: ignore
     return jsonify(users)
 
 
@@ -23,7 +24,7 @@ def add_user():
     email = data.get('email')
     firstName = data.get('firstName')
     lastName = data.get('lastName')
-    data_manager.add_user(email, firstName, lastName)
+    data_manager.add_user(email, firstName, lastName) # type: ignore
     response = {'message': 'Data received successfully'}
     return jsonify(response), 200
 
@@ -34,7 +35,7 @@ def delete_user():
     data = request.get_json()
     print(data)
 
-    deleted_user = data_manager.delete_user(data)
+    deleted_user = data_manager.delete_user(data) # type: ignore
     print(deleted_user)
     response = {'message': 'Data received successfully'}
     return jsonify(response), 200

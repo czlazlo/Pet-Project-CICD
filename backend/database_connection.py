@@ -6,22 +6,12 @@ from dotenv import load_dotenv
 
 def get_connection_string():
     # setup connection string
-    # to do this, please define these environment variables first
-    #load_dotenv('/backend/dotenv.env')
-    #load_dotenv('/home/lazlo/CC/Pet-Project-CICD/backend/dotenv.env')
-    
-    #load_dotenv('/home/lazlo/CC/GIT/Pet-Project-CICD/backend/dotenv.env')
 
     user_name = os.getenv('DATABASE_USER')
     password = os.getenv('DATABASE_PASSWORD')
     #host = os.getenv('DATABASE_HOST')
     host = 'postgres'
     database_name = os.getenv('DATABASE_NAME')
-
-    print(user_name)
-    print(password)
-    print(host)
-    print(database_name)
     
 
     

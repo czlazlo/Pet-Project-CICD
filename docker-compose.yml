@@ -14,6 +14,7 @@ services:
       - DATABASE_PASSWORD=postgres
     networks:
       - myapp_network
+    image: czlazlo/pet-project-cicd:backend-latest
   frontend:
     build:
       context: ./frontend/react-project
@@ -22,6 +23,7 @@ services:
       - "3001:3000"
     networks:
       - myapp_network
+    image: czlazlo/pet-project-cicd:frontend-latest
   postgres:
     build:
       context: ./db
@@ -40,6 +42,7 @@ services:
       - postgres:/home/lazlo/CC/GIT/Pet-Project-CICD/docker
     networks:
       - myapp_network
+    image: czlazlo/pet-project-cicd:database-latest
 
 volumes:
   postgres:

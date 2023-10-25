@@ -26,8 +26,8 @@ jobs:
         run: |
           docker-compose -f docker-compose.yml build
           docker-compose -f docker-compose.yml push
-        working-directory: /home/lazlo/CC/GIT
+        working-directory: ./
 
       - name: Stop and remove containers
         run: docker-compose -f docker-compose.yml down
-        working-directory: /home/lazlo/CC/GIT
+        working-directory: ./

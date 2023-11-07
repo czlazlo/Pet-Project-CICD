@@ -39,7 +39,7 @@ services:
     ports:
       - "5431:5432"
     volumes:
-      - postgres:/home/lazlo/CC/GIT/Pet-Project-CICD/docker
+      - postgres:/var/lib/postgresql/data
     networks:
       - myapp_network
     image: czlazlo/pet-project-cicd:database-latest

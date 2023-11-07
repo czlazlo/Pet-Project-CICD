@@ -19,4 +19,5 @@ COPY . .
 EXPOSE 5000
 
 # Command to run your Python application
+# TODO: Use gunicorn https://flask.palletsprojects.com/en/2.2.x/deploying/gunicorn/
 CMD ["python3", "server.py"]
